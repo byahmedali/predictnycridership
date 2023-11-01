@@ -109,11 +109,14 @@ req = urllib.request.Request(url, body, headers)
 if st.button("Predict"):
     try:
         response = urllib.request.urlopen(req)
-
         result = json.loads(response.read())
+        result = result["Results"][0]
         st.write("Predicted Ride Count:" )
-        st.title(int(round(result["Results"][0])))
-        st.write(f"On  {year}-{month}-{day} ")
+        if result < 0:
+          st.title(0)
+        elif result >= 0:
+          st.title(int(round(result)))
+        st.write(f"On  {year}-{month}-{day}.")
 
         # st.write(f"The ride count is {int(round(result['Results'][0],3))} \t At:>  DATE: {year}-{month}-{day}")
     except urllib.error.HTTPError as error:
