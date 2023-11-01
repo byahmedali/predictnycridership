@@ -41,13 +41,13 @@ else:
 # season_dict={ [['12','1','2']]:"Winter",[['3','4','5']]:"Spring",[['6','7','8']]:"Summer",[['9','10','11']]:"Autumn"}
 # season_dict={ ['12','1','2']:"Winter",['3','4','5']:"Spring",['6','7','8']:"Summer",['9','10','11']:"Autumn"}
 # season_dict={ "Winter":['12','1','2'],"Spring":['3','4','5'],"Summer":['6','7','8'],"Autumn":['9','10','11']}
-if month>=1 and month <3 and month=12:
+if month in [12, 1, 2]:
     season="Winter"
-elif month>=3 and month <6:
+elif month in [3, 4, 5]:
   season="Spring"
-elif month>=6 and month <9:
+elif month in [6, 7, 8]:
     season="Summer"
-elif month>=9 and month<12:
+elif month in [9, 10, 11]:
     season="Autumn"
 # for month_index in season_dict.keys():
     # print(month)
