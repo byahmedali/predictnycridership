@@ -24,14 +24,12 @@ You can try the prediction model below yourself.
 
 st.write("You can adjust some parameters according to your need.")
 
-pickup_location = st.selectbox("Pickup Borough", ["Manhattan","Bronx", "Brooklyn", "EWR",  "Queens", "Staten Island" ])
+pickup_location = st.selectbox("Pickup Borough", ["Manhattan", "Bronx", "Brooklyn", "EWR", "Queens", "Staten Island"])
 
 selected_date = st.date_input("Select a date", date(2023, 1, 1))
 year = int(selected_date.year)
 month = int(selected_date.month)
 day = int(selected_date.day)
-
-
 
 selected_day = selected_date.strftime("%A")[0:3]
 #st.write(f"You selected {selected_day} in week")
@@ -43,6 +41,7 @@ elif selected_day in ["Sat", "Sun"]:
 # season_dict={ [['12','1','2']]:"Winter",[['3','4','5']]:"Spring",[['6','7','8']]:"Summer",[['9','10','11']]:"Autumn"}
 # season_dict={ ['12','1','2']:"Winter",['3','4','5']:"Spring",['6','7','8']:"Summer",['9','10','11']:"Autumn"}
 # season_dict={ "Winter":['12','1','2'],"Spring":['3','4','5'],"Summer":['6','7','8'],"Autumn":['9','10','11']}
+
 if month in [12, 1, 2]:
     season="Winter"
 elif month in [3, 4, 5]:
@@ -59,15 +58,15 @@ elif month in [9, 10, 11]:
 # season = st.selectbox("Select a season", ["Spring", "Summer", "Fall", "Winter"])
 taxi_type = st.selectbox("Ride type", ["Green Taxi", "Yellow Taxi", "High Volume For-Hire Vehicle"])
 
-st.write(pickup_location, type(pickup_location))
-st.write(taxi_type, type(taxi_type))
-st.write(selected_date, type(selected_date))
-st.write(year)
-st.write(month)
-st.write(day)
-st.write(selected_day, type(selected_day))
-st.write(workday, type(workday))
-st.write(season, type(season))
+#st.write(pickup_location)
+#st.write(taxi_type)
+#st.write(selected_date)
+#st.write(year)
+#st.write(month)
+#st.write(day)
+#st.write(selected_day)
+#st.write(workday)
+#st.write(season)
 #  -------------------------------------
 
 def allowSelfSignedHttps(allowed):
@@ -101,7 +100,7 @@ data =  {
 
 
 body = str.encode(json.dumps(data))
-
+#st.write(body)
 url = 'http://ff8b8ccf-0dfb-48f0-b6f3-5e7954b6d1c6.eastus.azurecontainer.io/score'
 
 
