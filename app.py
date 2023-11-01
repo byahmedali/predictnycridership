@@ -35,9 +35,9 @@ day = int(selected_date.day)
 
 selected_day = selected_date.strftime("%A")[0:3]
 #st.write(f"You selected {selected_day} in week")
-if day  in ["Monday","Tuesday","Wednesday","Thursday","Friday"]:
+if day  in ["Mon","Tue","Wed","Thu","Fri"]:
   workday=1
-else:
+elif day in ["Sat", "Sun"]:
   workday=0
 
 # season_dict={ [['12','1','2']]:"Winter",[['3','4','5']]:"Spring",[['6','7','8']]:"Summer",[['9','10','11']]:"Autumn"}
@@ -66,7 +66,7 @@ st.write(year)
 st.write(month)
 st.write(day)
 st.write(selected_day)
-st.write(work_day)
+st.write(workday)
 st.write(season)
 #  -------------------------------------
 
