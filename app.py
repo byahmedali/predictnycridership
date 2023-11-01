@@ -24,9 +24,9 @@ You can try the prediction model below yourself.
 
 st.write("You can adjust some parameters according to your need.")
 
-pickup_location = st.selectbox("Pickup Borough", ["Manhattan", "Bronx", "Brooklyn", "EWR", "Queens", "Staten Island"])
+pickup_location = st.selectbox("Pickup Location in New York City", ["Manhattan", "Bronx", "Brooklyn", "EWR", "Queens", "Staten Island"])
 
-selected_date = st.date_input("Select a date", date(2023, 1, 1))
+selected_date = st.date_input("Date in the future", date(2023, 1, 1))
 year = int(selected_date.year)
 month = int(selected_date.month)
 day = int(selected_date.day)
@@ -106,12 +106,12 @@ url = 'http://ff8b8ccf-0dfb-48f0-b6f3-5e7954b6d1c6.eastus.azurecontainer.io/scor
 
 headers = {'Content-Type':'application/json'}
 req = urllib.request.Request(url, body, headers)
-if st.button("Predict"):
+if st.button("Use AI to Predict"):
     try:
         response = urllib.request.urlopen(req)
         result = json.loads(response.read())
         result = result["Results"][0]
-        st.write("Predicted Ride Count:" )
+        st.write("Expected Number of Trips:" )
         if result < 0:
           st.title(0)
         elif result >= 0:
