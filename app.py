@@ -59,15 +59,15 @@ elif month in [9, 10, 11]:
 # season = st.selectbox("Select a season", ["Spring", "Summer", "Fall", "Winter"])
 taxi_type = st.selectbox("Ride type", ["Green Taxi", "Yellow Taxi", "High Volume For-Hire Vehicle"])
 
-st.write(pickup_location)
-st.write(taxi_type)
-st.write(selected_date)
+st.write(pickup_location, type(pickup_location))
+st.write(taxi_type, type(taxi_type))
+st.write(selected_date, type(selected_date))
 st.write(year)
 st.write(month)
 st.write(day)
-st.write(selected_day)
-st.write(workday)
-st.write(season)
+st.write(selected_day, type(selected_day))
+st.write(workday, type(workday))
+st.write(season, type(season))
 #  -------------------------------------
 
 def allowSelfSignedHttps(allowed):
