@@ -22,13 +22,15 @@ This prediction model enables taxi and for-hire-vehicle dispatching services wit
 You can try the prediction model below yourself.
 ''')
 
-st.write("You can adjust some parameters according to your need, ")
+st.write("You can adjust some parameters according to your need.")
+
 pickup_location = st.selectbox("Pickup Borough", ["Manhattan","Bronx", "Brooklyn", "EWR",  "Queens", "Staten Island" ])
 
 selected_date = st.date_input("Select a date", date(2023, 1, 1))
-year = selected_date.year
+year = int(selected_date.year)
 month = int(selected_date.month)
-day = selected_date.day
+day = int(selected_date.day)
+
 
 
 selected_day = selected_date.strftime("%A")[0:3]
@@ -57,6 +59,15 @@ elif month in [9, 10, 11]:
 # season = st.selectbox("Select a season", ["Spring", "Summer", "Fall", "Winter"])
 taxi_type = st.selectbox("Ride type", ["Green Taxi", "Yellow Taxi", "High Volume For-Hire Vehicle"])
 
+st.write(pickup_location)
+st.write(taxi_type)
+st.write(selected_date)
+st.write(year)
+st.write(month)
+st.write(day)
+st.write(selected_day)
+st.write(work_day)
+st.write(season)
 #  -------------------------------------
 
 def allowSelfSignedHttps(allowed):
